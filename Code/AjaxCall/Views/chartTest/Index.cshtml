@@ -1,0 +1,70 @@
+﻿@{
+	ViewBag.Title = "Index";
+}
+
+<table width="100%">
+	<tr>
+		<td>
+			<img src="@Url.Action("CharterColumn")" alt="Chart" />
+		</td>
+		<td>
+			<img src="@Url.Action("ChartBar")" alt="Chart" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="@Url.Action("ChartPie")" alt="Chart" />
+		</td>
+		<td>
+			<img src="@Url.Action("ChartThreelinebreak")" alt="Chart" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="@Url.Action("Bubblebreak")" alt="Chart" />
+		</td>
+		<td>
+			<img src="@Url.Action("DoughnutGraph")" alt="Chart" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="@Url.Action("ChartStackedBar100")" alt="Chart" />
+		</td>
+		<td>
+			<img src="@Url.Action("ChartBoxPlot")" alt="Chart" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="@Url.Action("ChartPyramid")" alt="Chart" />
+		</td>
+		<td>
+			<img src="@Url.Action("ChartPolar")" alt="Chart" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="@Url.Action("RadarChart")" alt="Chart" />
+		</td>
+		<td>
+			<img src="@Url.Action("ChartRangeBar")" alt="Chart" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="@Url.Action("ChartFunnel")" alt="Chart" />
+		</td>
+	</tr>
+</table>
+
+@*@{
+		var myChart = new Chart(width: 600, height: 400, theme: ChartTheme.Green)
+			.AddTitle("Chart Title")
+			.AddSeries(
+				name: "ChartTitle",
+				chartType: "Pie",
+				xValue: new[] { "Col1", "Col2", "Col3", "Col4", "Col5" },
+				yValues: new[] { "2", "6", "4", "5", "3" })
+			.Write();
+	}*@

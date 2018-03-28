@@ -1,0 +1,67 @@
+﻿@model Logic.Entity.EMP
+
+@{
+	ViewBag.Title = "save";
+}
+@using (Html.BeginForm("save", "home", FormMethod.Post))
+{
+	<table>
+		<tr>
+			<td>
+				Name
+			</td>
+			<td>
+				@Html.TextBoxFor(c => c.Name)
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Address
+			</td>
+			<td>
+				@Html.TextBoxFor(c => c.Address)
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Contact
+			</td>
+			<td>
+				@Html.TextBoxFor(c => c.Contact)
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button type="button" class="save">save</button>
+			</td>
+		</tr>
+	</table>
+}
+@section scripts{
+	<script>
+		$(document).on("click", ".save", function () {
+			alert("init");
+			var empObj = {
+				Name: $('#Name').val(),
+				Address: $('#Address').val(),
+				Contact: $('#Contact').val(),
+			};
+			$.ajax({
+				url: "/Home/save",
+				data: JSON.stringify(empObj),
+				type: "POST",
+				contentType: "application/json;charset=utf-8",
+				dataType: "json",
+				success: function (result) {
+
+					alert(result);
+					//loadData();
+					//$('#myModal').modal('hide');
+				},
+				error: function (errormessage) {
+					alert(errormessage.responseText);
+				}
+			});
+		});
+	</script>
+}
